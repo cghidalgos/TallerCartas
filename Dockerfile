@@ -7,6 +7,13 @@ WORKDIR /app
 # Copia los archivos de la aplicación al contenedor
 COPY . .
 
+descomentar estas lineas si se esta en ambiente de producción y se hacen cambios en el repo -- SI.Se debe comemtar la linea 8
+# Instala Git y dependencias necesarias
+#RUN apt-get update && apt-get install -y git && apt-get clean
+
+# Clona el repositorio directamente en el contenedor
+#RUN git clone https://github.com/cghidalgos/TallerCartas.git /app
+
 # Instala las dependencias del proyecto
 RUN pip install --no-cache-dir -r requirements.txt
 
