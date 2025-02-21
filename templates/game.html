@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿En qué Montón Está tu Carta?</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>¿En qué montón está tu carta?</h1>
+    <p>Ronda {{ ronda }} de 3</p>
+
+    <form action="{{ url_for('next_round') }}" method="post">
+        <div class="montones">
+            {% for i in range(3) %}
+                <div class="monton">
+                    {% for carta in montones[i] %}
+                        <div class="carta">{{ carta }}</div>
+                    {% endfor %}
+                    <button type="submit" name="monton" value="{{ i }}" class="btn">Montón {{ i + 1 }}</button>
+                </div>
+            {% endfor %}
+        </div>
+    </form>
+</body>
+</html>

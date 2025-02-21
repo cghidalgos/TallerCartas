@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piensa en una Carta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Piensa en una carta</h1>
+    <p>Elige mentalmente una carta de las siguientes:</p>
+
+    <div class="baraja">
+        {% for carta in cartas %}
+            <div class="carta">{{ carta }}</div>
+        {% endfor %}
+    </div>
+
+    <form action="{{ url_for('game') }}" method="post">
+        <button type="submit" class="btn">Continuar</button>
+    </form>
+</body>
+</html>

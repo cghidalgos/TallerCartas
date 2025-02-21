@@ -1,0 +1,119 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+/* Cartas */
+.baraja, .montones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.carta {
+    width: 80px;
+    height: 120px;
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.carta:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px rgba(255, 215, 0, 0.7);
+}
+
+/* Montones */
+.montones {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.monton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Carta Revelada */
+.carta-revelada {
+    font-size: 2.5em;
+    background: gold;
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: inline-block;
+    color: black;
+    font-weight: bold;
+    box-shadow: 5px 5px 15px rgba(255, 215, 0, 0.8);
+    animation: brillo 1s infinite alternate;
+}
+
+/* Animación de brillo */
+@keyframes brillo {
+    from { box-shadow: 5px 5px 15px rgba(255, 215, 0, 0.8); }
+    to { box-shadow: 7px 7px 20px rgba(255, 215, 0, 1); }
+}
+
+/* Botones */
+.btn {
+    background: #ff4b5c;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: #ff6b81;
+    transform: scale(1.1);
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .montones {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.carta-revelada {
+    font-size: 2.5em;
+    background: gold;
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: inline-block;
+    color: black;
+    font-weight: bold;
+    box-shadow: 5px 5px 15px rgba(255, 215, 0, 0.8);
+    animation: brillo 1s infinite alternate;
+}

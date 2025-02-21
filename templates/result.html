@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carta es...</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Tu carta final es:</h1>
+    <div class="carta-revelada">{{ carta_final }}</div>
+    
+    <br>
+    <a href="{{ url_for('index') }}" class="btn">Volver a Jugar</a>
+</body>
+</html>
