@@ -2,7 +2,7 @@
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    background: linear-gradient(to right, #0f0c29, #13121e, #101022);
     color: white;
     margin: 0;
     padding: 0;
@@ -11,6 +11,37 @@ body {
 h1 {
     margin-top: 20px;
     font-size: 2em;
+}
+
+.h2 {
+    position: relative;
+    font-size: 4em;
+    letter-spacing: 15px;
+    color: #040417;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    line-height: 0.70em;
+    outline: none;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+        color: #040417;
+        text-shadow: none;
+    }
+
+    10%, 18.1%, 20.1%, 30%, 50%, 55%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+        color: #fff;
+        text-shadow: 0 0 10px #32e6e9, 
+                    0 0 20px #32e6e9, 
+                    0 0 40px #32e6e9, 
+                    0 0 80px #32e6e9, 
+                    0 0 160px #32e6e9, 
+                    
+    }
 }
 
 /* Cartas */
@@ -47,15 +78,18 @@ h1 {
 .montones {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
 .monton {
     display: flex;
-    flex-direction: column;
     align-items: center;
     background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
+    padding-left: 20px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: 10px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
@@ -116,4 +150,232 @@ h1 {
     font-weight: bold;
     box-shadow: 5px 5px 15px rgba(255, 215, 0, 0.8);
     animation: brillo 1s infinite alternate;
+}
+
+.card {
+    width: 120px;
+    height: 175px;
+    background: #13121e;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.card h2{
+    z-index: 1;
+    color: rgb(0, 0, 0);
+    font-size: 4em;
+}
+.card::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(26, 71, 250), rgb(199, 4, 4));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;    
+}
+
+@keyframes rotBGimg {
+    form {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.card::after{
+    content: '';
+    position: absolute;
+    background: rgb(255, 255, 255);
+    inset: 5px;
+    border-radius: 15px;
+    
+}
+
+/*-------------------------------*/
+
+.card2 {
+    width: 108px;
+    height: 173px;
+    background: rgb(0, 0, 0);
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.card2 h2{
+    z-index: 1;
+    color: rgb(0, 0, 0);
+    font-size: 4em;
+}
+.card2::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(26, 71, 250), rgb(199, 4, 4));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;    
+}
+
+@keyframes rotBGimg {
+    form {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.card2::after{
+    content: '';
+    position: absolute;
+    background: rgb(255, 255, 255);
+    inset: 5px;
+    border-radius: 15px;
+    
+}
+/*--------------Carta revelada-----------------*/
+
+.cardR {
+    width: 108px;
+    height: 173px;
+    background: rgb(0, 0, 0);
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.cardR h2{
+    z-index: 1;
+    color: rgb(0, 0, 0);
+    font-size: 4em;
+}
+.cardR::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(250, 250, 250), rgb(255, 237, 148));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;    
+}
+
+@keyframes rotBGimg {
+    form {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.cardR::after{
+    content: '';
+    position: absolute;
+    background: gold;
+    inset: 5px;
+    border-radius: 15px;
+    
+}
+
+/*----------------Carta Final---------------*/
+.cardF {
+    width: 108px;
+    height: 173px;
+    background: rgb(0, 0, 0);
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px rgba(255, 215, 0, 0.8);
+    animation: brillo 1s infinite alternate;
+}
+.cardF h2{
+    z-index: 1;
+    color: rgb(0, 0, 0);
+    font-size: 4em;
+}
+.cardF::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(250, 250, 250), rgb(255, 237, 148));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;    
+}
+
+@keyframes rotBGimg {
+    form {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.cardF::after{
+    content: '';
+    position: absolute;
+    background: gold;
+    inset: 5px;
+    border-radius: 15px;
+    
+}
+/*-----------------*/
+
+.button {
+    --glow-color: rgb(154, 26, 0); 
+    --glow-spread-color: rgba(87, 84, 146, 0.781); 
+    --enchanced-glow-color: rgb(208, 4, 4); 
+    --btn-color: rgb(140, 0, 0);
+    border: 0.25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+}
+
+.button::after {
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: 0.7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.button:hover {
+    color: white;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 2em var(--glow-spread-color),
+                inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.button:active {
+   box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
 }

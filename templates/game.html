@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+    <h2 class="h2">Adivina Cartas</h2><br>
     <h1>¿En qué montón está tu carta?</h1>
     <p>Ronda {{ ronda }} de 3</p>
 
@@ -15,9 +16,11 @@
             {% for i in range(3) %}
                 <div class="monton">
                     {% for carta in montones[i] %}
-                        <div class="carta">{{ carta }}</div>
+                        <div class="card2"><h2>{{ carta }}</h2></div>
                     {% endfor %}
-                    <button type="submit" name="monton" value="{{ i }}" class="btn">Montón {{ i + 1 }}</button>
+                    <br><br>
+                <p style="color: rgba(255, 255, 255, 0);">---------</p>
+                    <button type="submit" name="monton" value="{{ i }}" class="btn button">Montón {{ i + 1 }}</button>
                 </div>
             {% endfor %}
         </div>

@@ -7,17 +7,19 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Piensa en una carta</h1>
-    <p>Elige mentalmente una carta de las siguientes:</p>
+    <h2 class="h2">Adivina Cartas</h2>
+    <br>
+    <h3>Elige mentalmente una carta de las siguientes:</h3>
 
     <div class="baraja">
         {% for carta in cartas %}
-            <div class="carta">{{ carta }}</div>
+            <div class="card"><h2>{{ carta }}</h2></div>
         {% endfor %}
     </div>
-
+<br><br>
+    <h3>¿Ya elegiste? Continuemos</h3><br>
     <form action="{{ url_for('game') }}" method="post">
-        <button type="submit" class="btn">Continuar</button>
-    </form>
+        <button class="button" type="submit">Continuar</button> 
+    </form><br><br>
 </body>
 </html>

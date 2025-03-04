@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+    <h2 class="h2">Adivina Cartas</h2><br>
     <h1>Revelando tu carta...</h1>
-    <div class="carta-revelada">{{ carta_actual }}</div>
+    <center>
+    <div class="cardR"><h2>{{ carta_actual }}</h2></div>
     
     <br>
-    <a href="{{ url_for('next_card') }}" class="btn">Siguiente Carta</a>
+    <a href="{{ url_for('next_card') }}" class="btn button">Siguiente Carta</a>
+</center>
 </body>
 </html>

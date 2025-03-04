@@ -55,14 +55,14 @@ def next_card():
     session["indice_carta"] += 1
     indice = session["indice_carta"]
     
-    if indice >= len(session["cartas_restantes"]):
+    if indice >= 10:
         return redirect(url_for("result"))
     
     return render_template("reveal.html", carta_actual=session["cartas_restantes"][indice])
 
 @app.route("/result")
 def result():
-    carta_final = session["cartas_restantes"][-1]
+    carta_final = session["cartas_restantes"][-11]
     return render_template("result.html", carta_final=carta_final)
 
 def generar_explicacion(ronda, monton_elegido, cartas):
