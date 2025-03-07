@@ -48,17 +48,19 @@ def next_round():
 @app.route("/reveal")
 def reveal():
     session["indice_carta"] = 0
-    return render_template("reveal.html", carta_actual=session["cartas_restantes"][0])
+    session["contador"] = 1
+    return render_template("reveal.html", carta_actual=session["cartas_restantes"][0], contador=session["contador"])
 
 @app.route("/next_card")
 def next_card():
     session["indice_carta"] += 1
+    session["contador"] += 1
     indice = session["indice_carta"]
     
     if indice >= 10:
         return redirect(url_for("result"))
     
-    return render_template("reveal.html", carta_actual=session["cartas_restantes"][indice])
+    return render_template("reveal.html", carta_actual=session["cartas_restantes"][indice], contador=session["contador"])
 
 @app.route("/result")
 def result():

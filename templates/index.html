@@ -9,15 +9,14 @@
 <body>
     <h2 class="h2">Adivina Cartas</h2>
     <br>
-    <h3>Elige mentalmente una carta de las siguientes:</h3>
-
+    <h2>Elige mentalmente una carta de las siguientes:</h2>
     <div class="baraja">
         {% for carta in cartas %}
             <div class="card"><h2>{{ carta }}</h2></div>
         {% endfor %}
     </div>
 <br><br>
-    <h3>¿Ya elegiste? Continuemos</h3><br>
+    <h2>¿Ya elegiste? Continuemos</h2><br>
     <form action="{{ url_for('game') }}" method="post">
         <button class="button" type="submit">Continuar</button> 
     </form><br><br>
