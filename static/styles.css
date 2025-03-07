@@ -339,7 +339,7 @@ h1 {
     border: 0.25em solid var(--glow-color);
     padding: 1em 3em;
     color: white;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
     background-color: var(--btn-color);
     border-radius: 1em;
@@ -378,4 +378,53 @@ h1 {
    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
                 0 0 2.5em 2em var(--glow-spread-color),
                 inset 0 0 0.5em 0.25em var(--glow-color);
+}
+/* Contenedor de la carta */
+.campo-carta {
+    display: inline-flex; /* Se adapta al tamaño del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    background: transparent;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    animation: brillo 1s infinite alternate;
+    box-shadow: none !important;
+}
+
+.campo-carta h2 {
+    z-index: 1;
+    color: white;
+    font-size: 1.1em;
+    position: relative;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.campo-carta::before {
+    content: '';
+    position: absolute;
+    width: 250%;
+    height: 250%;
+    background-image: linear-gradient(180deg, rgb(26, 71, 250), rgb(199, 4, 4));
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+    border-radius: 20px;
+}
+
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.campo-carta::after {
+    content: '';
+    position: absolute;
+    background: rgb(140, 0, 0);
+    inset: 5px;
+    border-radius: 15px;
 }
